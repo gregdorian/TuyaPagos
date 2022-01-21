@@ -12,7 +12,7 @@ Se Realizaron los siguientes entidades
 
 **Producto**
 
-**CarritoCompra**
+**OrdenCompra**
 
 **Cliente**
 
