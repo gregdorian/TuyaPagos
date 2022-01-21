@@ -1,3 +1,9 @@
+using co.Tuya.Aplication.Interfaces;
+using co.Tuya.Aplication.Services;
+using co.Tuya.Domain.Core;
+using co.Tuya.Domain.Core.Repositories;
+using co.Tuya.Domain.Core.Services;
+using co.Tuya.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +32,18 @@ namespace co.Tuya.UI.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Servicios de la capa de aplicación con servicios
+            services.AddScoped(typeof(IBaseAppService<>), typeof(BaseAppService<>));
+            services.AddScoped<IProductosAppService, ProductAppService>();//TODO cambiar refactorizar el nombre
+
+
+            ////el dominio a los de infraestructura
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped<IProductosService, ProductosService>();
+
+            ////infraestructura o persistencia
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IProductosRepository, ProductosRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

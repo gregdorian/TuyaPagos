@@ -5,7 +5,7 @@ namespace co.Tuya.Domain.Entities
     public class Producto
     {
         [Key]
-        public int produtoId { get; set; }
+        public int productoId { get; set; }
 
         public string Descripcion { get; set; }
 

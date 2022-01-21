@@ -7,11 +7,11 @@ namespace co.Tuya.Aplication.Services
 {
     public class ProductAppService : BaseAppService<Producto>, IProductosAppService
     {
-        private readonly IProductosService ProductsService;
+        private readonly IProductosService ProductosService;
 
         public ProductAppService(IProductosService productosService) : base(productosService)
         {
-            this.ProductsService = productosService;
+            this.ProductosService = productosService;
         }
     }
 }
