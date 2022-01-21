@@ -34,9 +34,11 @@ La estructura de los proyectos de clases y UI son las siguientes:
 
 
 para ejecutar la solucion despues de descargarla/Clonar del repeositorio de github:
+
 **1-Borrar los archivos de migración en la Carpeta migrations del proyeto co.Tuya.Infrastructure.Data,**
 
 **2- ejecutar la migracion de code first para que los datos queden en la instancia de SQL que se crea en la instalación de Visual Studio 2019**
+
 en el Package Console Manager escribir:
 
 **add-migration firstMigration -OutputDir Migrations -Context TuyaContext -Project co.Tuya.Infrastructure.Data dar enter**
