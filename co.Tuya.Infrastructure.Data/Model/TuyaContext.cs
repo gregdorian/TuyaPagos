@@ -20,7 +20,7 @@ namespace co.Tuya.Infrastructure.Data.Model
 
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
-        public virtual DbSet<CarritoCompra> CarritoCompras { get; set; }
+        public virtual DbSet<OrdenCompra> OrdenesCompras { get; set; }
         public virtual DbSet<Logistica> Logisticas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
