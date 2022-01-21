@@ -187,7 +187,7 @@ namespace co.Tuya.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("co.Tuya.Domain.Entities.Producto", b =>
                 {
-                    b.Property<int>("produtoId")
+                    b.Property<int>("productoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -201,7 +201,7 @@ namespace co.Tuya.Infrastructure.Data.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("produtoId");
+                    b.HasKey("productoId");
 
                     b.HasIndex("OrdenCompraId");
 
@@ -210,25 +210,25 @@ namespace co.Tuya.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            produtoId = 1,
+                            productoId = 1,
                             Descripcion = "Mouse",
                             Precio = 3500m
                         },
                         new
                         {
-                            produtoId = 2,
+                            productoId = 2,
                             Descripcion = "Teclado",
                             Precio = 50500m
                         },
                         new
                         {
-                            produtoId = 3,
+                            productoId = 3,
                             Descripcion = "Pantalla",
                             Precio = 605000m
                         },
                         new
                         {
-                            produtoId = 4,
+                            productoId = 4,
                             Descripcion = "Tablet",
                             Precio = 32500m
                         });

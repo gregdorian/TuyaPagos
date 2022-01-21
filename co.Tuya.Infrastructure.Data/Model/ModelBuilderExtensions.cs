@@ -9,10 +9,10 @@ namespace co.Tuya.Infrastructure.Data.Model
         {
 
             model.Entity<Producto>().HasData(
-                   new Producto { produtoId=1,Descripcion = "Mouse", Precio = 3500 },
-                   new Producto { produtoId=2,Descripcion = "Teclado", Precio = 50500 },
-                   new Producto { produtoId=3, Descripcion = "Pantalla", Precio = 605000 },
-                   new Producto { produtoId=4, Descripcion = "Tablet", Precio = 32500 });
+                   new Producto { productoId=1,Descripcion = "Mouse", Precio = 3500 },
+                   new Producto { productoId=2,Descripcion = "Teclado", Precio = 50500 },
+                   new Producto { productoId=3, Descripcion = "Pantalla", Precio = 605000 },
+                   new Producto { productoId=4, Descripcion = "Tablet", Precio = 32500 });
 
             model.Entity<Cliente>().HasData(
                    new Cliente { clienteId = 1, Nombres = "Carlos", Apellidos = "Muñoz", Telefono = "34654612", Ciudad = "Barbosa", Direccion = "cra 35 #100-00" },

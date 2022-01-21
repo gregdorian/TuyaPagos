@@ -35,15 +35,26 @@ namespace co.Tuya.UI.WebApi
             //Servicios de la capa de aplicación con servicios
             services.AddScoped(typeof(IBaseAppService<>), typeof(BaseAppService<>));
             services.AddScoped<IProductosAppService, ProductAppService>();//TODO cambiar refactorizar el nombre
-
+            //**clientes
+            services.AddScoped<IClientesAppService, ClientesAppService>();
+            //**Logistica
+            services.AddScoped<ILogisticaAppService, LogisticaAppService>();
 
             ////el dominio a los de infraestructura
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<IProductosService, ProductosService>();
+            //**Clientes
+            services.AddScoped<IClientesService, ClientesService>();
+            //**Logistica
+            services.AddScoped<ILogisticaService, LogisticaService>();
 
             ////infraestructura o persistencia
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IProductosRepository, ProductosRepository>();
+            //**clients
+            services.AddScoped<IClientesRepository, ClientesRepository>();
+            //**Logistica
+            services.AddScoped<ILogisticaRepository, LogisticaRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

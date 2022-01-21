@@ -74,7 +74,7 @@ namespace co.Tuya.Infrastructure.Data.Migrations
                 name: "Productos",
                 columns: table => new
                 {
-                    produtoId = table.Column<int>(type: "int", nullable: false)
+                    productoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -82,7 +82,7 @@ namespace co.Tuya.Infrastructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Productos", x => x.produtoId);
+                    table.PrimaryKey("PK_Productos", x => x.productoId);
                     table.ForeignKey(
                         name: "FK_Productos_OrdenesCompras_OrdenCompraId",
                         column: x => x.OrdenCompraId,
@@ -115,7 +115,7 @@ namespace co.Tuya.Infrastructure.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Productos",
-                columns: new[] { "produtoId", "Descripcion", "OrdenCompraId", "Precio" },
+                columns: new[] { "productoId", "Descripcion", "OrdenCompraId", "Precio" },
                 values: new object[,]
                 {
                     { 1, "Mouse", null, 3500m },
