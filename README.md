@@ -8,7 +8,7 @@ Utilizando Patrones de Diseño
 - MVC entre otros
 
 
-Se Realizaron los siguientes entidades
+Se Realizaron los siguientes entidades/Tablas
 
 **Producto**
 
