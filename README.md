@@ -18,7 +18,7 @@ Se Realizaron los siguientes entidades/Tablas
 
 **Logistica**
 
-Para la Base de datos se utilizo SQL server 2016 Utilizando Entity Framework Core 6.0 y Code First
+Para la Base de datos se utilizo SQL server 2016 Utilizando Entity Framework Core 6.0 y Code First .Net 5.0
 
 La estructura de los proyectos de clases y UI son las siguientes:
 
