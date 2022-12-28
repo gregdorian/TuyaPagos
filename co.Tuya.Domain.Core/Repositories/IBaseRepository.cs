@@ -14,6 +14,8 @@ namespace co.Tuya.Domain.Core.Repositories
         IEnumerable<TEntity> GetAll();
 
         TEntity GetById(int id);
+        
+        public PagedList<T> Find(Expression<Func<T,bool>> predicate, int pageNumber, pageSize)
 
         void Dispose();
     }
