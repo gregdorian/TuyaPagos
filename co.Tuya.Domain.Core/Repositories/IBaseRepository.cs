@@ -15,8 +15,16 @@ namespace co.Tuya.Domain.Core.Repositories
 
         TEntity GetById(int id);
         
-        public PagedList<T> Find(Expression<Func<T,bool>> predicate, int pageNumber, pageSize)
-
+        //public PagedList<T> Find(Expression<Func<T,bool>> predicate, int pageNumber, pageSize);
+        
+        Task<QueryResult<TEntity>> GetPageAsync(QueryObjectParams queryObjectParams);
+ 
+        Task<QueryResult<TEntity>> GetPageAsync(QueryObjectParams queryObjectParams, 
+                                   Expression<Func<TEntity, bool>> predicate);
+ 
+        Task<QueryResult<TEntity>> GetOrderedPageQueryResultAsync
+        (QueryObjectParams queryObjectParams, IQueryable<TEntity> query);
+        
         void Dispose();
     }
 }
