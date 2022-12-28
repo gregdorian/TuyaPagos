@@ -101,5 +101,40 @@ namespace co.Tuya.Infrastructure.Data.Repositories
                 throw new Exception("No se puede actualizar el registro", ex);
             }
         }
+        
+        public async Task<QueryResult<TEntity>> 
+        GetOrderedPageQueryResultAsync
+        (QueryObjectParams queryObjectParams, IQueryable<TEntity> query)
+        {
+            IQueryable<TEntity> OrderedQuery = query;
+ 
+            if (queryObjectParams.SortingParams != null && 
+                queryObjectParams.SortingParams.Count > 0)
+            {
+                OrderedQuery = SortingExtension.GetOrdering
+                               (query, queryObjectParams.SortingParams);
+            }
+ 
+            var totalCount = await query.CountAsync().ConfigureAwait(false);
+ 
+            if (OrderedQuery != null)
+            {
+                var fecthedItems = 
+                await GetPagePrivateQuery
+                (OrderedQuery, queryObjectParams).ToListAsync().ConfigureAwait(false);
+ 
+                return new QueryResult<TEntity>(fecthedItems, totalCount);
+            }
+ 
+            return new QueryResult<TEntity>(await GetPagePrivateQuery
+            (_dbSet, queryObjectParams).ToListAsync().ConfigureAwait(false), totalCount);
+        } 
+ 
+        private IQueryable<TEntity> GetPagePrivateQuery
+        (IQueryable<TEntity> query, QueryObjectParams queryObjectParams)
+        {
+            return query.Skip((queryObjectParams.PageNumber - 1) * 
+            queryObjectParams.PageSize).Take(queryObjectParams.PageSize);
+        }
     }
 }
